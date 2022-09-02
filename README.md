@@ -1,5 +1,5 @@
 # AI Based Health Tracker
-a program made to track and monitor the nutrient intake as well as health of students enrolled in **mid day meal** intiative .
+Our idea attempts to keep track and monitor the process of mid-day meals for students whether they are receiving the necessary calories and nutrients intake along with attendance.
 <br><br>
 **Tech Stack** <br><br>
 ![Flask](https://img.shields.io/badge/-Flask-blue?style=for-the-badge&logo=Flask)
