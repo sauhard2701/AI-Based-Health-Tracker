@@ -1,4 +1,4 @@
-# Healthify
+# AI Based Health Tracker
 a program made to track and monitor the nutrient intake as well as health of students enrolled in **mid day meal** intiative .
 <br><br>
 **Tech Stack** <br><br>
