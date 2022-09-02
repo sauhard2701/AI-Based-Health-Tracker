@@ -1,0 +1,38 @@
+{% include 'base.html' %} {% include 'navbar.html' %} {% block body %}
+<!-- prettier-ignore -->
+{% with messages = get_flashed_messages() %} 
+	{% if messages %}
+	{% for message in messages%}
+<div class="alert alert-info alert-dismissable" role="alert">
+	<button type="button" class="close" data-dismiss="alert" aria-label="close">
+		<span aria-hidden="true">x</span>
+	</button>
+	{{message}}
+</div>
+{% endfor %} {% endif %} {% endwith %}
+
+<main class="main">
+	<h3 class="heading">Capture a photo and upload here</h3>
+	<div class="input">
+		<form class="homeform" action="/" method="post" enctype="multipart/form-data">
+			<label class="custom-file-upload">
+				<input type="file" name="file" required />
+				Select File
+			</label>
+			<div class="upload">
+				<input type="submit" value="Upload" />
+			</div>
+			<div>(.jpg only)</div>
+		</form>
+	</div>
+</main>
+
+<div class="info">
+	<div class="item" id="i2">Name of Food item : {{ prediction_text[0] }}<span id="itemname"></span></div>
+	<div class="item" id="i3">Item Volume : {{ prediction_text[1] }}<span id="itemvolume"></span></div>
+	<div class="item" id="i1">Item Weight : {{ prediction_text[2] }}<span id="itemweight"></span></div>
+	<div class="item" id="i4">Calories : {{ prediction_text[3] }}<span id="calories"></span></div>
+	<div class="item" id="i5">Calories per 100gm : {{ prediction_text[4] }}<span id="caloriespr"></span></div>
+</div>
+
+{% endblock %}

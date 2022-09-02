@@ -1,0 +1,31 @@
+{% include 'base.html' %} {% include 'navbar.html' %} {% block body %}
+<!-- prettier-ignore -->
+{% with messages = get_flashed_messages() %} 
+	{% if messages %}
+	{% for message in messages%}
+<div class="alert alert-info alert-dismissable" role="alert">
+	<button type="button" class="close" data-dismiss="alert" aria-label="close">
+		<span aria-hidden="true">x</span>
+	</button>
+	{{message}}
+</div>
+{% endfor %} {% endif %} {% endwith %}
+<div class="container">
+	<p>Tacked Results</p>
+	<div class="container">
+		<table>
+			<tr>
+				<th>Name Of Student </th>
+				<th>Timing</th>
+			</tr>
+			{% for i in range(length)%}
+			<tr>
+				<td>{{list_names[0][i]}}</td>
+				<td>{{list_names[1][i]}}</td>
+			</tr>
+			{% endfor %}    
+		<table>
+	</div>
+</div>
+
+{% endblock %}

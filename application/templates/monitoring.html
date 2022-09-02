@@ -1,0 +1,32 @@
+{% include 'base.html' %} {% include 'navbar.html' %} {% block body %}
+<div style="width=80%;margin:50px auto">
+	<canvas id="lineChart" width="900" height="400"> </canvas>
+</div>
+
+<script>
+	var ctx = document.getElementById("lineChart").getContext("2d");
+	var lineChart = new Chart(ctx, {
+		type: "line",
+		data: {
+			// labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+
+			// labels:{{labels}},
+	        labels:['Prathamesh Jadhav', 'Saurabh Patra', 'Rohit Patil', 'Aayush Sharma', 'Pratik Deshmukh', 'Abhinav Jadhav', 'Rohan Choudhary', 'Pratik Deshmukh', 'Janhvi Singh', 'Aayushi Sharma', 'Divya Patil', 'Ganesh Rao', 'Aditi Sinha', 'Amartya Gumaste', 'Vinayak Sharma', 'Atharva Rhykar', 'Anant Jain', 'Ishan Chaudhary', 'Ishika Gupta'],
+			datasets: [
+				{
+					label: "BMI",
+					data:{{values}},
+					// data: [12, 19, 3, 5, 2, 3],
+					fill: false,
+					borderColor: "rgb(75,192.192)",
+					lineTension: 0.1,
+				},
+			],
+		},
+		options: {
+			responsive: false,
+		},
+	});
+</script>
+
+{% endblock %}

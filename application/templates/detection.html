@@ -1,0 +1,37 @@
+{% include 'base.html' %} {% include 'navbar.html' %} {% block body %}
+<!-- prettier-ignore -->
+{% with messages = get_flashed_messages() %} 
+	{% if messages %}
+	{% for message in messages%}
+<div class="alert alert-info alert-dismissable" role="alert">
+	<button type="button" class="close" data-dismiss="alert" aria-label="close">
+		<span aria-hidden="true">x</span>
+	</button>
+	{{message}}
+</div>
+{% endfor %} {% endif %} {% endwith %}
+<div class="container">
+	<h1>Nothing to Show</h1>
+	<br />
+	<p>Start Tracking</p>
+	<br />
+
+	<form action="/detection" method="post" enctype="multipart/form-data">
+		<input type="submit" value="Run" id="runbtn" />
+	</form>
+</div>
+<div class="loader_par">
+	<div class="loader">C</div>
+	<div class="loadertext">Please wait</div>
+</div>
+
+<script>
+	loader = document.querySelector('.loader_par')
+	btn = document.querySelector('#runbtn')
+	loader.style.opacity = 0;
+	btn.addEventListener('click', function(){
+		loader.style.opacity = 1;
+	})
+</script>
+
+{% endblock %}

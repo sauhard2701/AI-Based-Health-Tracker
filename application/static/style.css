@@ -1,0 +1,264 @@
+:root {
+	--paddh: 20px;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+	transition: 0.2s ease-in-out;
+	letter-spacing: 0.03em;
+}
+
+a {
+	text-decoration: none;
+	color: white;
+}
+
+.hide {
+	opacity: 0;
+	pointer-events: none;
+}
+
+body {
+	font-size: 20px;
+	background: #ddd;
+}
+
+.info {
+	width: 25%;
+	margin: 50px auto;
+}
+
+.homeform {
+	width: 100%;
+}
+
+#navbar {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	padding: var(--paddh);
+	background: #333;
+}
+#navbar .ttl {
+	font-family: "VT323", monospace;
+	word-spacing: -0.2em;
+	font-size: 1.5em;
+	color: rgb(255, 255, 255);
+}
+#navbar .menu {
+	display: flex;
+	flex-direction: row;
+	gap: 30px;
+	margin-left: auto;
+}
+#navbar > svg {
+	display: none;
+	cursor: pointer;
+}
+#navbar .menu > svg {
+	height: 20px;
+	width: 20px;
+	display: none;
+	cursor: pointer;
+}
+#navbar .menu .menu_items {
+	list-style-type: none;
+	font-size: 0.7em;
+}
+#navbar .menu .menu_items a {
+	color: rgba(255, 255, 255, 0.7);
+	text-decoration: none;
+}
+#navbar .menu .menu_items a:hover {
+	color: #fff;
+}
+
+.container {
+	padding: 40px;
+	text-align: center;
+}
+
+.container form input {
+	width: 100px;
+}
+
+table {
+	border-collapse: collapse;
+	width: 60%;
+	margin: 50px auto;
+}
+
+table th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: center;
+	background-color: #04aa6d;
+	color: white;
+}
+
+table tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+table tr:hover {
+	background-color: #ddd;
+}
+
+.main {
+	margin: 50px;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	gap: 15px;
+	padding: 30px var(--paddh);
+}
+.main .heading {
+	text-align: center;
+	font-weight: 700;
+	color: #333;
+}
+.main .input {
+	margin: 50px auto;
+	display: flex;
+	width: 30%;
+	justify-content: center;
+	align-items: center;
+	font-size: 0.7em;
+	gap: 15px;
+}
+input[type="file"] {
+	display: none;
+	max-width: 200px;
+}
+
+.upload {
+	display: inline;
+	padding-left: 60px;
+}
+
+.custom-file-upload {
+	border-radius: 5px;
+	background: #fff;
+	display: inline-block;
+	padding: 6px 12px;
+	cursor: pointer;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+.main .input > div {
+	color: rgba(51, 51, 51, 0.7);
+	font-weight: 500;
+}
+.custom-file-upload:hover {
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.popup {
+	background: rgba(0, 0, 0, 0.4);
+	width: 100%;
+	height: 100vh;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.popup .info_par {
+	background: #fff;
+	padding: 10px;
+	font-size: 0.7em;
+	font-weight: 500;
+	border-radius: 5px;
+	position: relative;
+	min-width: 300px;
+}
+.popup .info_par > img {
+	min-height: 150px;
+	margin: 0 0 10px 0;
+	border-radius: 5px;
+}
+.popup .info_par > svg {
+	height: 15px;
+	width: 15px;
+	cursor: pointer;
+	position: absolute;
+	top: 5px;
+	right: 5px;
+}
+.popup .info_par .info {
+	display: flex;
+	gap: 5px;
+	flex-direction: column;
+}
+
+@media (max-width: 800px) {
+	#navbar .menu {
+		position: absolute;
+		top: 0;
+		right: 0;
+		height: 100%;
+		padding: 20px 40px;
+		gap: 20px;
+		background: #222;
+		flex-direction: column;
+		text-align: right;
+	}
+	.close_menu {
+		transform: translateX(100%);
+	}
+
+	#navbar > svg {
+		display: flex;
+		height: 20px;
+		width: 20px;
+		margin-left: auto;
+	}
+	#navbar .menu > svg {
+		display: flex;
+		margin-left: auto;
+		margin-bottom: 20px;
+	}
+	.main .heading {
+		font-size: 1em;
+	}
+}
+
+@media (max-width: 420px) {
+	#navbar .menu {
+		width: 100%;
+		text-align: center;
+	}
+}
+
+
+.loader_par{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	pointer-events: none;
+	background: rgba(0,0,0,0.3);
+	gap: 7px;
+}
+.loader{
+	font-size: 2em;
+	font-weight: 700;
+	font-family: 'Montserrat', sans-serif;
+	animation: rotate 2s infinite linear;
+}
+
+@keyframes rotate {
+	0%{
+		transform: rotate(0deg);
+	}
+	100%{
+		transform: rotate(-360deg);
+	}
+}
